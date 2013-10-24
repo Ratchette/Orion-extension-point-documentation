@@ -40,6 +40,8 @@ window.onload = function(){
 		        match = /^=\s*(.+?)\s*=$/.exec(line);
 		      
 		        if (match) {
+		        	// FIXME - change so that it only grabs the name of the header (without the ==)
+		        	// FIXME - modify to accomidate nesting of headers (to give an example of the header tags)
 		            outline.push({
 		                label: match[1],
 		                line: i+1  // lines are numbered from 1
@@ -50,7 +52,6 @@ window.onload = function(){
     		return outline;
 		}
 	};
-	
 
 
 	// headers contains Optional metainformation displayed in Orion's settings page
