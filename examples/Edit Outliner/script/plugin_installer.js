@@ -1,31 +1,59 @@
 /*******************************************************************************
  * @license
- * Copyright (c) 2011 IBM Corporation and others.
- * All rights reserved. This program and the accompanying materials are made 
- * available under the terms of the Eclipse Public License v1.0 
- * (http://www.eclipse.org/legal/epl-v10.html), and the Eclipse Distribution 
- * License v1.0 (http://www.eclipse.org/org/documents/edl-v10.html). 
- *
- * Contributors:
- *     IBM Corporation - initial API and implementation
- *	   Jennifer Winer - Extension to HTML5 Outlining
+ * FIXME - needs a liscence
  *******************************************************************************/
 
 /*global Tautologistics eclipse self window*/
 
-//This is a copy of the HTML outline plugin coded as a web worker plugin
-
 window.onload = function(){
-	
-	var outlineService = {
-		setContentType: function(contentTypeId){
-				
-			}
-	};
 
-	/**
-	 * Optional metainformation displayed in Orion's settings page
-	 */
+	// The functionality of your plugin
+	var outlineService = {
+		/**
+		 * @param {String} contents The contents of the file being edited
+		 * @param {String} title The path and the filename of the file being edited
+		 * @return {Array} an array consisting of the elements that compose an outline
+		 * 
+		 * Each element of the Array can contain the following properties:
+		 * =================================================================
+		 * label 		= The text that will be shown in the outline
+		 * 
+		 * [className] 	= A space-separated list of CSS class names to be applied to the label
+		 * [children] 	= An Array of nested elements
+		 * 
+		 * 
+		 * Please only use one of the following:
+		 * --------------------------------------
+		 * [line] 		= The line in the file this label will link to. For finer control 
+		 * 					please see the variables column, start, end, text inside the
+		 * 					 orion.util.hashFromPosition() documentation on orion wiki.
+		 * [href]		= The URL that this label will link to
+		 */
+		getOutline: function(contents, title){
+			var outline = [];
+		    var lines, line;
+		    var match;
+		    
+		    lines = contents.split(/\r?\n/);
+		    for (var i=0; i < lines.length; i++) {
+		        line = lines[i];
+		        match = /^=\s*(.+?)\s*=$/.exec(line);
+		      
+		        if (match) {
+		            outline.push({
+		                label: match[1],
+		                line: i+1  // lines are numbered from 1
+		       	    });
+		        }
+		    }
+		    
+    		return outline;
+		}
+	};
+	
+
+
+	// headers contains Optional metainformation displayed in Orion's settings page
 	var headers = {
 		name: "PLUGIN NAME",
 		version: "0.0.0",
@@ -33,29 +61,21 @@ window.onload = function(){
 	};
 	
 	
-	/**
-	 * FIXME - Do these varaibles do anything other than sit in the carosel?
-	 */
+	 // FIXME - Do these varaibles do anything other than sit in the carosel?
 	var serviceProperties = {
-		pid: "orion.edit.hilighter.html.comments",
-		name: "Hilighter and Grammar example",
+		// Unique ID identifier
+		id: "orion.edit.outliner.mediawiki headings",
 		
-		// For a grammar use the following
+		// The name of your plugin
+		name: "Mediawiki Headings Plugin",
 		
-		type : "grammar",
-    	contentType: ["text/html"],	// The list of file types that your plugin will work under
-    	grammar:
-		
-		// For a hilighter use the following
-		
-		
+		// The list of file types that your plugin will work under
+    	contentType: ["text/plain"]
 	};
 	
 	
-	/*
-	 * Register the plugin with Orion *******
-	 */
+	// Register your plugin with Orion
 	var provider = new eclipse.PluginProvider(headers);
-	provider.registerServiceProvider("orion.edit.highlighter", outlineService, serviceProperties);
+	provider.registerServiceProvider("orion.edit.outliner", outlineService, serviceProperties);
 	provider.connect();
 };
