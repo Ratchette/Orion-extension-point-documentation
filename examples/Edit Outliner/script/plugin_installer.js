@@ -33,6 +33,7 @@ window.onload = function(){
 			var outline = [];
 		    var lines, line;
 		    var match;
+		    var heading;
 		    
 		    lines = contents.split(/\r?\n/);
 		    for (var i=0; i < lines.length; i++) {
@@ -40,21 +41,26 @@ window.onload = function(){
 		        match = /^=\s*(.+?)\s*=$/.exec(line);
 		      
 		        if (match) {
+		        	// remove the = tags from the header
+		        	
 		        	// FIXME - change so that it only grabs the name of the header (without the ==)
 		        	// FIXME - modify to accomidate nesting of headers (to give an example of the header tags)
 		            outline.push({
 		                label: match[1],
 		                line: i+1  // lines are numbered from 1
 		       	    });
-		        }
+                }
 		    }
 		    
-    		return outline;
+			return outline;
 		}
 	};
 
 
-	// headers contains Optional metainformation displayed in Orion's settings page
+	/**
+	 * headers contains Optional metainformation displayed in Orion's settings page
+	 * It can help you uniquely identify this plugin
+	 */
 	var headers = {
 		name: "PLUGIN NAME",
 		version: "0.0.0",
@@ -62,20 +68,26 @@ window.onload = function(){
 	};
 	
 	
-	 // FIXME - Do these varaibles do anything other than sit in the carosel?
+	// FIXME - Trace these variables through Eclipse Orion to find out where they are going
 	var serviceProperties = {
-		// Unique ID identifier
+		/* Unique ID identifier
+		 *  - It must begin with orion.edit.outliner
+		 *  - The text that follows should uniquely identify the functionality you are adding
+		 */
 		id: "orion.edit.outliner.mediawiki headings",
 		
 		// The name of your plugin
 		name: "Mediawiki Headings Plugin",
 		
 		// The list of file types that your plugin will work under
-    	contentType: ["text/plain"]
+        contentType: ["text/plain"]
 	};
 	
 	
-	// Register your plugin with Orion
+	/**
+	 * Register the plugin with Orion
+	 * *** DO NOT TOUCH BELOW THIS LINE ***
+	 */
 	var provider = new eclipse.PluginProvider(headers);
 	provider.registerServiceProvider("orion.edit.outliner", outlineService, serviceProperties);
 	provider.connect();
