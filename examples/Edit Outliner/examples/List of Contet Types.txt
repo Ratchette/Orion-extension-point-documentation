@@ -1,0 +1,114 @@
+This file contains a list of all content types nativley supported by Eclipse Orion's editor
+For the most recent list of all content types please see webEditingPlugin.js in client UI code.
+
+Text Types:
+============
+{	id: "text/plain",
+	name: "Text",
+	extension: ["txt"],
+	image: "../images/file.png"
+},
+
+{	id: "text/html",
+	"extends": "text/plain",
+	name: "HTML",
+	extension: ["html", "htm"],
+	image: "../images/html.png"
+},
+
+{	id: "text/css",
+	"extends": "text/plain",
+	name: "CSS",
+	extension: ["css"],
+	image: "../images/css.png"
+},
+
+{	id: "application/javascript",
+	"extends": "text/plain",
+	name: "JavaScript",
+	extension: ["js"],
+	image: "../images/javascript.png"
+},
+
+{	id: "application/json",
+	"extends": "text/plain",
+	name: "JSON",
+	extension: ["json"],
+	image: "../images/file.png"
+},
+
+{	id: "application/xml",
+	"extends": "text/plain",
+	name: "XML",
+	extension: ["xml"],
+	image: "../images/xmlfile.png"
+},
+
+{	id: "text/x-java-source",
+	"extends": "text/plain",
+	name: "Java",
+	extension: ["java"]
+},
+
+{	id: "text/x-markdown",
+	"extends": "text/plain",
+	name: "Markdown",
+	extension: ["md"]
+},
+
+{	id: "text/x-yaml",
+	"extends": "text/plain",
+	name: "YAML",
+	extension: ["yaml", "yml"]
+},
+
+{	id: "text/conf",
+	"extends": "text/plain",
+	name: "Conf",
+	extension: ["conf"]
+},
+
+{	id: "text/sh",
+	"extends": "text/plain",
+	name: "sh",
+	extension: ["sh"]
+},
+	
+	
+Image Types
+============
+{	id: "image/gif",
+	name: "GIF",
+	extension: ["gif"],
+	image: "../images/wtp/image.gif"
+},
+
+{	id: "image/jpeg",
+	name: "JPG",
+	extension: ["jpg", "jpeg", "jpe"],
+	image: "../images/wtp/image.gif"
+},
+
+{	id: "image/ico",
+	name: "ICO",
+	extension: ["ico"],
+	image: "../images/wtp/image.gif"
+},
+
+{	id: "image/png",
+	name: "PNG",
+	extension: ["png"],
+	image: "../images/wtp/image.gif"
+},
+
+{	id: "image/tiff",
+	name: "TIFF",
+	extension: ["tif", "tiff"],
+	image: "../images/wtp/image.gif"
+},
+
+{	id: "image/svg",
+	name: "SVG",
+	extension: ["svg"],
+	image: "../images/wtp/image.gif"
+}
