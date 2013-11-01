@@ -3,40 +3,80 @@
  * FIXME - needs a liscence
  *******************************************************************************/
 
-/*global Tautologistics orion self window*/
+/*global orion window*/
 
 window.onload = function(){
+	// transforms the flat list of headings into a nested outline
+	function nestHeadings(headings){
+		var root;
+		var parent;
+		
+		var curr_level;
+		var i;
+		
+		root = parent = [];
+		curr_level = 1;
+			
+		for(i=0; i<headings.length; i++){
+			if(headings[i].level < curr_level){
+				parent = root;
+				curr_level = 1;
+			}
+	        
+			while(Number(headings[i].level) > curr_level){
+			  parent = parent[parent.length-1];
+	
+				if(typeof parent['children'] === "undefined"){
+					parent.children = [];
+				}
+				parent = parent.children;
+				curr_level = curr_level +1;
+			}
+			
+			if(Number(headings[i].level) === curr_level){
+				parent.push({
+					label: headings[i].label,
+					line: headings[i].line
+				});
+			}
+	        
+		}
+		
+		return root;
+	};
+	
+	
 	function parseHeadings(content){
 		var outline = [];
 	    var lines, line;
 	    var match;
 	    
 	    lines = content.split(/\r?\n/);
+	    
+	    // Collect the properties of every heading on the page
 	    for (var i=0; i < lines.length; i++) {
 	        line = lines[i];
-	        match = /^=\s*(.+?)\s*=$/.exec(line);
+	        match = /^(=+)\s*(.+?)\s*(=+)$/.exec(line);
 	      
-	        if (match) {
-	        	// remove the = tags from the header
-	        	
-	        	// FIXME - change so that it only grabs the name of the header (without the ==)
-	        	// FIXME - modify to accomidate nesting of headers (to give an example of the header tags)
-	            outline.push({
-	                label: match[1],
-	                line: i+1  // lines are numbered from 1
+	        if (match){
+	        	outline.push({
+	                label: match[2],
+	                line: i+1,  // lines are numbered from 1
+	                level: match[1].length
 	       	    });
 	        }
 	    }
-		return outline;
-	}
+	    
+	    return nestHeadings(outline);
+	};
+
 	
 	// The functionality of your plugin
 	var outlineService = {
 		/**
 		 * Orion 4.0 Compliant
-		 * @param {ObjectReference} editorContext allows two way communication 
-		 * 				between the plugin and the Orion Editor
-		 * 				- Please see "Editor Context Informaiton.txt" for more 
+		 * @param {ObjectReference} editorContext 
+		 * 				- Please see "examples/editor_context.html" for more information
 		 * 
 		 * @param {String} options.contentType the The Content Type ID of the file
 		 * 				being edited. Please see the file "List of Content Types.txt"
@@ -60,11 +100,7 @@ window.onload = function(){
 		 * [href]		= The URL that this label will link to
 		 */
 		computeOutline: function(editorContext, options){
-			// FIXME - make this work
-		//return editorContext.getText().then(parseHeadings);
-		
-			return [{label:"4.0 Compliance: The method editorContext.getText() does not appear to be working yet ..."}];
-		//	return parseHeadings("===Heading===\n more infor\n== Heading 2 ===");
+			return editorContext.getText().then(parseHeadings);
 		},
 		
 		

@@ -3,7 +3,7 @@
  * FIXME - needs a liscence
  *******************************************************************************/
 
-/*global Tautologistics orion self esprima window*/
+/*global orion esprima window*/
 
 window.onload = function(){
 	
@@ -11,30 +11,11 @@ window.onload = function(){
 	var outlineService = {
 		/**
 		 * Orion 4.0 Compliant
-		 * @param {ObjectReference} editorContext allows two way communication 
-		 * 				between the plugin and the Orion Editor
-		 * 				- Please see "Editor Context Informaiton.txt" for more 
+		 * @param {Object} astContext contains all of the information needed to 
+		 * 					compute the AST.
 		 * 
-		 * @param {String} options.contentType the The Content Type ID of the file
-		 * 				being edited. Please see the file "List of Content Types.txt"
-		 * 				for more informaiton 
-		 * 
-		 * @return {Array} an array consisting of the elements that compose an outline
-		 * 
-		 * Each element of the Array can contain the following properties:
-		 * =================================================================
-		 * label 		= The text that will be shown in the outline
-		 * 
-		 * [className] 	= A space-separated list of CSS class names to be applied to the label
-		 * [children] 	= An Array of nested elements
-		 * 
-		 * 
-		 * Please only use one of the following:
-		 * --------------------------------------
-		 * [line] 		= The line in the file this label will link to. For finer control 
-		 * 					please see the variables column, start, end, text inside the
-		 * 					 orion.util.hashFromPosition() documentation on orion wiki.
-		 * [href]		= The URL that this label will link to
+		 * @param {String} astContext.text Contains all of the text inside 
+		 * 					the file currently open in the editor
 		 */
 		computeAST: function(astContext) {
            var ast = esprima.parse(astContext.text, {
@@ -46,7 +27,7 @@ window.onload = function(){
                         tolerant: true
                      });
            if (ast.errors) {
-               ast.errors = ast.errors.map(serialize.serializeError);
+               ast.errors = ast.errors.map(orion.serialize.serializeError);
            }
            return ast;
        }
