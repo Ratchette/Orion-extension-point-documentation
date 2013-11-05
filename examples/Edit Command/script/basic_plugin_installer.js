@@ -5,6 +5,7 @@
 
 /*global orion window*/
 window.onload = function(){
+	// the functionality of the plugin
 	function generateComment(text, selection){
 		var comment;
 		var newSelection;
@@ -21,9 +22,10 @@ window.onload = function(){
 		return {
 			text: comment,
 			selection: newSelection
-     	};
+		};
 	}
 	
+	// more functionality of the plugin
 	function removeComment(text, selection){
 		var originalText;
 		var newSelection;
@@ -40,7 +42,7 @@ window.onload = function(){
 		return {
 			text: originalText,
 			selection: newSelection
-     	};
+		};
 	}
 	
 	
@@ -64,20 +66,16 @@ window.onload = function(){
 		 */
 		
 		// FIXME - Make 4.0 compliant
-//		execute: function(editorContext, options){
-//			var selection = editorContext.getSelection();
-//			var text = editorContext.getText();
-//			var result;
-//			
-//			if((text.substring(selection.start, selection.start + 3) === "/* ") &&
-//				(text.substring(selection.end - 3, selection.end) === " */"))
-//				result = removeComment(text, selection);
-//			else
-//				result = generateComment(text, selection);
-//			
-//			editorContext.setText(result.text);
-//			editorContext.setSelection(result.selection);
-//		},
+		execute: function(editorContext, options){
+			return editorContext.getText().then(function(text){
+					 return editorContext.getSelection().then(function(selection){
+						if((text.substring(selection.start, selection.start + 3) === "/* ") && (text.substring(selection.end - 3, selection.end) === " */"))
+							return removeComment(text, selection);
+						else
+							return generateComment(text, selection);
+					});
+				});
+		},
 		
 		/**
 		 * Orion 3.0 Compliant
@@ -92,24 +90,15 @@ window.onload = function(){
 		 * Each element of the CommandResult object can contain the following properties:
 		 * ===============================================================================
 		 * 
-		 * Please only use one of the following two:
-		 * -----------------------------------------
+		 * You may only use one of the following at a time:
+		 * ------------------------------------------------
 		 * text 		= The replacement text. This string will override everything 
 		 * 					inside the selection buffer
 		 * uriTemplate	= A new UI iframe will open with this UI
-		 * 
-		 * [selection] 	= A selection object containing a new selection object
-		 * 
-		 * [status] 	= A status object containing information that will be displayed in
-		 * 					the statys notification area	
-		 * [status.severity] = A string consisting of "Warning" or "Error".
-		 * [status.message]	 = The status message that will be displayed. This string will
-		 * 						be interpreted to be in markdown syntax, and as such may
-		 * 						contain hyperlinks.
+		 * 					Please see delegating_ui_plugin_installer.js for more information
 		 */
 		run: function(selectedText, text, selection, resource){
-			if((text.substring(selection.start, selection.start + 3) === "/* ") &&
-				(text.substring(selection.end - 3, selection.end) === " */"))
+			if((text.substring(selection.start, selection.start + 3) === "/* ") && (text.substring(selection.end - 3, selection.end) === " */"))
 				return removeComment(text, selection);
 			else
 				return generateComment(text, selection);

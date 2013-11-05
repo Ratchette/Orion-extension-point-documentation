@@ -12,6 +12,11 @@ ALL
 - track serviceProperties
 - Add liscences to all files ...
 
+Edit command
+- 4.0 compliance for the basic example
+- validation_properties.html
+- ...figure out all delegated UI stuff
+
 
 *** CSS *** 
 Tags 
