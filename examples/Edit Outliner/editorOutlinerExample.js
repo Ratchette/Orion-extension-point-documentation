@@ -165,7 +165,6 @@ window.onload = function(){
 	
 	/**
 	 * Register the plugin with Orion
-	 * *** DO NOT TOUCH BELOW THIS LINE ***
 	 */
 	var provider = new orion.PluginProvider(headers);
 	provider.registerServiceProvider("orion.edit.outliner", outlineService, serviceProperties);

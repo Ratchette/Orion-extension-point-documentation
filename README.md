@@ -18,7 +18,9 @@ Edit command
 - ...figure out all delegated UI stuff
 
 
-*** CSS *** 
+*** CSS ***  
+(For the additional_information pages)
+
 Tags 
 - body
 - h1
