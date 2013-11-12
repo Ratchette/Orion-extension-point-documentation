@@ -67,14 +67,22 @@ window.onload = function(){
 		
 		// FIXME - Make 4.0 compliant
 		execute: function(editorContext, options){
-			return editorContext.getText().then(function(text){
-					 return editorContext.getSelection().then(function(selection){
-						if((text.substring(selection.start, selection.start + 3) === "/* ") && (text.substring(selection.end - 3, selection.end) === " */"))
-							return removeComment(text, selection);
-						else
-							return generateComment(text, selection);
-					});
-				});
+			var content;
+
+			editorContext.getText().then(
+				function(text){
+					content = text;
+				}
+			);
+					
+			return editorContext.getSelection().then(
+				function(selection){
+					if((text.substring(selection.start, selection.start + 3) === "/* ") && (text.substring(selection.end - 3, selection.end) === " */"))
+						return removeComment(content, selection);
+					else
+						return generateComment(content, selection);
+				}
+			);
 		},
 		
 		/**

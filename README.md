@@ -16,6 +16,7 @@ Edit command
 - 4.0 compliance for the basic example
 - validation_properties.html
 - ...figure out all delegated UI stuff
+- README
 
 
 *** CSS ***  

@@ -46,7 +46,7 @@ window.onload = function(){
 	};
 	
 	
-	function parseHeadings(content){
+	function findHeadings(content){
 		var outline = [];
 	    var lines, line;
 	    var match;
@@ -100,7 +100,7 @@ window.onload = function(){
 		 * [href]		= The URL that this label will link to
 		 */
 		computeOutline: function(editorContext, options){
-			return editorContext.getText().then(parseHeadings);
+			return editorContext.getText().then(findHeadings);
 		},
 		
 		
@@ -114,7 +114,7 @@ window.onload = function(){
 		 * =================================================================
 		 * label 		= The text that will be shown in the outline
 		 * 
-		 * [className] 	= A space-separated list of CSS class names to be applied to the label
+		 * [className] 	= A space-separated list of CSS class names to be applied to tohe label
 		 * [children] 	= An Array of nested elements
 		 * 
 		 * 
@@ -126,7 +126,7 @@ window.onload = function(){
 		 * [href]		= The URL that this label will link to
 		 */
 		getOutline: function(contents, title){
-			return parseHeadings(contents);
+			return findHeadings(contents);
 		}
 	};
 
