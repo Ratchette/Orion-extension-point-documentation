@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Edit Editor Plugin Example</title>
+	
+	<script type="text/javascript" src='script/Deferred.js'></script>
+	<script type="text/javascript" src="script/plugin.js"></script>
+	<script type="text/javascript" src="editEditorExample.js"></script>
+</head>
+	
+<body>
+	<h1>[Plugin Name] Example Edit Editor Plugin</h1>
+
+	<p id="description">
+		[Describe what your plugin does] 
+		
+		This service declares a new editor. By default, the Orion client UI declares a single editor with id "orion.editor" which is used to edit source code. Using this service, you can declare entirely new editors (for example, you could register an editor that provided a paint interface for drawing images).
+<br />
+Contributions to this service do not directly affect the Orion UI. Instead, this service is typically used in combination with two other services, which allow new file types to be defined and associated with editors. For more information, please see:
+
+<ul>
+    <li>orion.core.contenttype: Registers a new content type for files.</li>
+    <li>orion.navigate.openWith: Associates a content type (registered via orion.core.contenttype) to an editor (registered via orion.edit.editor).</li>
+</ul>
+
+		This example creates an editor that does ... nothing. To include functionality with the editor, this extension point must be combined with others. 
+	</p>
+
+	<p id="reference">
+		For more information regarding this extension point please see <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_the_editor#orion.edit.editor">
+		Eclipse Orion's Developer Guide</a> <br/>
+	</p>
+</body>
+</html>

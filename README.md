@@ -11,14 +11,16 @@ List of things left to do:
 ALL
 - track serviceProperties
 - Add liscences to all files ...
+- content_types.html
+- editor_context.html
 
 Edit command
 - Delegated UI 4.0 is currently not supported 
     (complete this section when it is)
-    
 - validation_properties.html
-- README
 
+Combinations of extension points
+- edit.editor + core.contentType + navigate.openWith
 
 *** CSS ***  
 (For the additional_information pages)
