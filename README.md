@@ -13,23 +13,23 @@ ALL
 - Add liscences to all files ...
 - content_types.html
 - editor_context.html
+- remove extra service attributes from all!
+
+- there is currently no documentation for drag events or mouse events
+(check bugzilla)
+
+Edit model
+- Do something when the event happens!
 
 Edit command
 - Delegated UI 4.0 is currently not supported 
     (complete this section when it is)
 - validation_properties.html
 
-
-Edit hilighter 
-- Is it Orion 4.0 compliant?
-
-Edit model 
-- Is it Orion 4.0 compliant?
-
-Edit occurences
-- Is it Orion 4.0 compliant?
-
-
+TODO
+=====
+- Edit hilighter 
+- Edit model 
 
 Combinations of extension points
 - edit.editor + core.contentType + navigate.openWith
