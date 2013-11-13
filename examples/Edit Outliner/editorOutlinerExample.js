@@ -148,7 +148,7 @@ window.onload = function(){
 		 *  - It must begin with orion.edit.outliner
 		 *  - The text that follows should uniquely identify the functionality you are adding
 		 */
-		id: "orion.edit.outliner.mediawiki headings",
+		id: "orion.edit.outliner.mediawiki.headings",
 		
 		/**
 		 * The name of your plugin
@@ -157,7 +157,7 @@ window.onload = function(){
 		
 		/**
 		 * The list of file types that your plugin will work under
-		 * 		please see the file "List of Content Types.txt" for more informaiton 
+		 * 		please see the file "additional_examples/content_types.html" for more informaiton 
 		 */
         contentType: ["text/plain"]
 	};
