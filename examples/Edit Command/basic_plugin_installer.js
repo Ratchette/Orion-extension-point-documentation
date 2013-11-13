@@ -64,26 +64,25 @@ window.onload = function(){
 		 * using the editor context object. 	
 		 * eg. by using setText() or setSelection()
 		 */
-		
-		// FIXME - Make 4.0 compliant
-		execute: function(editorContext, options){
-			var content;
-
-			editorContext.getText().then(
-				function(text){
-					content = text;
-				}
-			);
-					
-			return editorContext.getSelection().then(
-				function(selection){
-					if((text.substring(selection.start, selection.start + 3) === "/* ") && (text.substring(selection.end - 3, selection.end) === " */"))
-						return removeComment(content, selection);
-					else
-						return generateComment(content, selection);
-				}
-			);
-		},
+//		// 4.0 compliance not implemented yet
+//		execute: function(editorContext, options){
+//			var content;
+//
+//			editorContext.getText().then(
+//				function(text){
+//					content = text;
+//				}
+//			);
+//					
+//			return editorContext.getSelection().then(
+//				function(selection){
+//					if((content.substring(selection.start, selection.start + 3) === "/* ") && (content.substring(selection.end - 3, selection.end) === " */"))
+//						return removeComment(content, selection);
+//					else
+//						return generateComment(content, selection);
+//				}
+//			);
+//		},
 		
 		/**
 		 * Orion 3.0 Compliant

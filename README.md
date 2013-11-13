@@ -13,9 +13,10 @@ ALL
 - Add liscences to all files ...
 
 Edit command
-- 4.0 compliance for the basic example
+- Delegated UI 4.0 is currently not supported 
+    (complete this section when it is)
+    
 - validation_properties.html
-- ...figure out all delegated UI stuff
 - README
 
 
