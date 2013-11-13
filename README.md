@@ -19,6 +19,18 @@ Edit command
     (complete this section when it is)
 - validation_properties.html
 
+
+Edit hilighter 
+- Is it Orion 4.0 compliant?
+
+Edit model 
+- Is it Orion 4.0 compliant?
+
+Edit occurences
+- Is it Orion 4.0 compliant?
+
+
+
 Combinations of extension points
 - edit.editor + core.contentType + navigate.openWith
 

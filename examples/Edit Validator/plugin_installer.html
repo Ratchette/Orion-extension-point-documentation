@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Edit Validator Plugin Example</title>
+	
+	<script type="text/javascript" src='script/Deferred.js'></script>
+	<script type="text/javascript" src="script/plugin.js"></script>
+	<script type="text/javascript" src="editValidatorExample.js"></script>
+</head>
+	
+<body>
+	<h1>[Plugin Name] Example Editor Validator Plugin</h1>
+
+	<p id="description">
+		[Describe what your plugin does] 
+		
+		An orion.edit.validator service provides a function that can check the contents of a file and return a data structure indicating where syntactic or semantic problems lie. The result of this service is used by the Orion UI to create annotations in the ruler beside each problematic line, and also to underline the specific portion of the document where the problem occurs.<br />
+		
+		This example will validate HTML files for best CSS practices. It produces an error if a tag contains inline styling, and a warning for every table tag.
+	</p>
+
+	<p id="reference">
+		For more information regarding this extension point please see <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_the_editor#orion.edit.validator">
+		Eclipse Orion's Developer Guide</a> <br/>
+		For more information on content types, please click <a href="additional_information/content_types.html">here</a>.
+		For more information on editor context objects, please click <a href="additional_information/editor_context.html">here</a>.
+	</p>
+</body>
+</html>
+
