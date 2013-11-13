@@ -6,7 +6,7 @@
 ///*global orion window*/
 //window.onload = function(){	
 //	// The functionality of your plugin
-//	var outlineService = {
+//	var serviceProvider = {
 //		/**
 //		 * Delegated UI is not presently Orion 4.0 compliant.
 //		 */
@@ -131,6 +131,6 @@
 //	 * Register the plugin with Orion
 //	 */
 //	var provider = new orion.PluginProvider(headers);
-//	provider.registerServiceProvider("orion.edit.command", outlineService, serviceProperties);
+//	provider.registerServiceProvider("orion.edit.command", serviceProvider, serviceProperties);
 //	provider.connect();
 //};

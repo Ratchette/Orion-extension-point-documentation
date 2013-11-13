@@ -47,14 +47,14 @@ window.onload = function(){
 	
 	
 	// The functionality of your plugin
-	var outlineService = {
+	var serviceProvider = {
 		/**
 		 * Orion 4.0 Compliant
 		 * @param {ObjectReference} editorContext 
-		 * 				- Please see "examples/editor_context.html" for more information
+		 * 				- Please see "additional_information/editor_context.html" for more information
 		 * 
 		 * @param {String} options.contentType the The Content Type ID of the file
-		 * 				being edited. Please see the file "List of Content Types.txt"
+		 * 				being edited. Please see the file "additional_informaiton/content_types.html"
 		 * 				for more informaiton 
 		 * 
 		 * @param {String} options.input The Path and the filename of the file open
@@ -139,7 +139,7 @@ window.onload = function(){
 		
 		/**
 		 * OPTIONAL: The list of file types that your plugin will work under
-		 * 		please see the file "List of Content Types.txt" for more informaiton 
+		 * 		please see the file "additional_information/content_typtes.html" for more informaiton 
 		 */
         contentType: ["application/javascript"],
         
@@ -186,6 +186,6 @@ window.onload = function(){
 	 * Register the plugin with Orion
 	 */
 	var provider = new orion.PluginProvider(headers);
-	provider.registerServiceProvider("orion.edit.command", outlineService, serviceProperties);
+	provider.registerServiceProvider("orion.edit.command", serviceProvider, serviceProperties);
 	provider.connect();
 };

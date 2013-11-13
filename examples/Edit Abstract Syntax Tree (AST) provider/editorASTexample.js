@@ -8,7 +8,7 @@
 window.onload = function(){
 	
 	// The functionality of your plugin
-	var outlineService = {
+	var serviceProvider = {
 		/**
 		 * Orion 4.0 Compliant
 		 * @param {Object} astContext contains all of the information needed to 
@@ -47,7 +47,7 @@ window.onload = function(){
 	// FIXME - Trace these variables through Eclipse Orion to find out where they are going
 	var serviceProperties = {
 		/* Unique ID identifier
-		 *  - It must begin with orion.edit.outliner
+		 *  - It must begin with orion.edit.astprovider
 		 *  - The text that follows should uniquely identify the functionality you are adding
 		 */
 		id: "orion.core.astprovider.javascript",
@@ -59,7 +59,7 @@ window.onload = function(){
 		
 		/**
 		 * The list of file types that your plugin will work under
-		 * 		please see the file "List of Content Types.txt" for more informaiton 
+		 * 		please see the file "additional_information/content_types.html" for more informaiton 
 		 */
         contentType: ["application/javascript"]
 	};
@@ -69,6 +69,6 @@ window.onload = function(){
 	 * Register the plugin with Orion
 	 */
 	var provider = new orion.PluginProvider(headers);
-	provider.registerServiceProvider("orion.core.astprovider", outlineService, serviceProperties);
+	provider.registerServiceProvider("orion.core.astprovider", serviceProvider, serviceProperties);
 	provider.connect();
 };

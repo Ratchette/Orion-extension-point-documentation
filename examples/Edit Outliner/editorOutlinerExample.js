@@ -72,14 +72,14 @@ window.onload = function(){
 
 	
 	// The functionality of your plugin
-	var outlineService = {
+	var serviceProvider = {
 		/**
 		 * Orion 4.0 Compliant
 		 * @param {ObjectReference} editorContext 
-		 * 				- Please see "examples/editor_context.html" for more information
+		 * 				- Please see "additional_information/editor_context.html" for more information
 		 * 
 		 * @param {String} options.contentType the The Content Type ID of the file
-		 * 				being edited. Please see the file "List of Content Types.txt"
+		 * 				being edited. Please see the file "additional_information/content_types.html"
 		 * 				for more informaiton 
 		 * 
 		 * @return {Array} an array consisting of the elements that compose an outline
@@ -167,6 +167,6 @@ window.onload = function(){
 	 * Register the plugin with Orion
 	 */
 	var provider = new orion.PluginProvider(headers);
-	provider.registerServiceProvider("orion.edit.outliner", outlineService, serviceProperties);
+	provider.registerServiceProvider("orion.edit.outliner", serviceProvider, serviceProperties);
 	provider.connect();
 };
