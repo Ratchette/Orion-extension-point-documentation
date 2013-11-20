@@ -9,6 +9,7 @@ List of things left to do:
 *** Funcitonality  ***
 
 ALL
+------
 - track serviceProperties
 - Add liscences to all files ...
 - content_types.html
@@ -18,13 +19,28 @@ ALL
 - there is currently no documentation for drag events or mouse events
 (check bugzilla)
 
+Edit occ
+
+
 Edit model
+-----------
 - Do something when the event happens!
 
+
 Edit command
+-------------
 - Delegated UI 4.0 is currently not supported 
     (complete this section when it is)
 - validation_properties.html
+
+
+Edit Highlighter
+-----------------
+- Complete highlighter functionality
+- Grab grammer funcitonality from other comptuer
+- pictures of both
+- update readme
+
 
 TODO
 =====

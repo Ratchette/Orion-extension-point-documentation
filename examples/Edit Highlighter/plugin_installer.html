@@ -7,8 +7,10 @@
 	<script type="text/javascript" src='script/Deferred.js'></script>
 	<script type="text/javascript" src="script/plugin.js"></script>
 	
+	<!--<script type='text/javascript' src='script/EventTarget.js'></script>
+	<script type="text/javascript" src="editHighlighterExample.js"></script>-->
+	
 	<script type='text/javascript' src='editGrammarExample.js'></script>
-	<!--<script type="text/javascript" src="editHighlighterExample.js"></script>-->
 </head>
 	
 <body>
@@ -18,21 +20,29 @@
 		[Describe what your plugin does] 
 		
 		The orion.edit.highlighter service contributes syntax highlighting rules to the editor. A highlighter service may provide highlighting in one of two ways:
+		<ul>
+    		<li>
+    		By passing a grammar, which is a declarative description of a language's syntax. The grammar tells the Orion editor how to recognize and style language constructs in a file.
+    		</li>
+    		
+    		<li>
+    		By writing a highlighter, which allows highlighting information to be calculated asynchronously by the provider itself and sent to the Orion editor for display.
+    		</li>
+		</ul>
 
-By passing a grammar, which is a declarative description of a language's syntax. The grammar tells the Orion editor how to recognize and style language constructs in a file.
-By writing a highlighter, which allows highlighting information to be calculated asynchronously by the provider itself and sent to the Orion editor for display.
-The service also provides a list of content types. When the editor opens a file of a registered content type, the provider is invoked (using one of the two methods described above) to obtain the styling.
-
-NOTE: The "highlighter" API is experimental and subject to change in future versions.
-
-
-Orion invokes this method to inform the provider what kind of file it must provide highlighting for. This allows the provider that to register itself with several content types, but implement different logic for each type.
-
-When this provider's type is "grammar", no service methods are defined: a grammar provider is purely declarative.
-		
-		The outliner is a bar that hovers to the left of the file currently being viewed in the editor.
-		The outliner can contain a tree of links to lines to particular lines in the file or other URLs. <br />
-		This particular example generates a nested outline of media-wiki style headings (= heading =) from textfiles
+    The service also provides a list of content types. When the editor opens a file of a registered content type, the provider is invoked (using one of the two methods described above) to obtain the styling.
+    
+    <br />
+    
+    NOTE: The "highlighter" API is experimental and subject to change in future versions.
+    
+    <br />
+    
+    Orion invokes this method to inform the provider what kind of file it must provide highlighting for. This allows the provider that to register itself with several content types, but implement different logic for each type.
+    
+    <br />
+    
+    When this provider's type is "grammar", no service methods are defined: a grammar provider is purely declarative.
 	</p>
 
 	<p id="reference">

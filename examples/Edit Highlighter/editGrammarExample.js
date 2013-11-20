@@ -26,7 +26,7 @@ window.onload = function(){
 		 * The list of file types that your plugin will work under
 		 * 		please see the file "additional_examples/content_types.html" for more informaiton 
 		 */
-        contentType: ["text/plain"],
+        contentType: ["text/html"],
         
         /**
          * What kind of highlight provider you are using. Possible values
