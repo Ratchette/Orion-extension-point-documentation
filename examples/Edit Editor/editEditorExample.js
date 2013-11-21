@@ -25,12 +25,12 @@ window.onload = function() {
          *  - It should begin with orion.edit.contentAssist
          *  - The text that follows should uniquely identify the functionality you are adding
          */
-        id: "orion.edit.editor.example",
+        id: "orion.edit.editor.pixlr.example",
 
         /**
          * The name of your plugin
          */
-        name: "An example editor",
+        name: "An example Image editor",
 
 
         /**********************************************************************************************
@@ -44,8 +44,7 @@ window.onload = function() {
          *      The template is specified using the URI Template syntax found here: 
          *      http://tools.ietf.org/html/draft-gregorio-uritemplate-08
          */
-        uriTemplate: "../edit/exampleEditor.html#{Location,params*}",
-        
+        uriTemplate: "{OrionHome}/content/content.html#{Location},contentProvider=orion.pixlr.content",
         
         /**
          * [Optional] Gives an Orion template for constructing the editor URL. 

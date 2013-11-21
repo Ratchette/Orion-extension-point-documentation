@@ -1,5 +1,4 @@
 An example for the orion.edit.command service
-An example for the orion.edit.command service
 ===
 
 ## orion.edit.command Plugin Example

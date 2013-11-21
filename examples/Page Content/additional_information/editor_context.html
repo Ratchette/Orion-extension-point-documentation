@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Orion's Editor Context Object</title>
+</head>
+<body>
+
+<h1>Orion Editor Context Object information</h1>
+<p id='description'>Orion's Editor Context object can be used to explicitly update the content of Orion's Editor from inside your plugin</p>
+<p id='reference'>For the most recent description of the Editor Context object please see 
+<a href='http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_the_editor#The_Editor_Context_object'>
+Eclipse Orion's Developer Guide</a></p>
+
+<h2>Methods</h2>
+<div class='method'>
+	<div class='property'>name <div class='value'>getAST(options)</div></div>
+	<div class='property'>description <div class='value'>
+		Resolves to Object. Returns an AST (Abstract Syntax Tree) for the file being edited, if an AST provider is available.
+		As of Orion 4.0 the only AST provider shipped with Orion is Esprima for JavaScript files.
+		Additional providers can be contributed by plugins.
+	</div></div>
+</div>
+	
+<div class='method'>
+	<div class='property'>name <div class='value'>getCaretOffset()</div></div>
+	<div class='property'>description <div class='value'>
+		Resolves to Number. Returns the offset of the editing caret.
+	</div></div>
+</div>
+
+<div class='method'>
+	<div class='property'>name <div class='value'>getSelection()</div></div>
+	<div class='property'>description <div class='value'>
+		Resolves to Selection. Returns the editor's current selection.
+	</div></div>
+</div>	
+
+<div class='method'>
+	<div class='property'>name <div class='value'>getText(start?, end?)</div></div>
+	<div class='property'>description <div class='value'>
+		Resolves to String. Returns the text in the given range.
+	</div></div>
+</div>	
+	
+<div class='method'>
+	<div class='property'>name <div class='value'>setCaretOffset(offset, show?)</div></div>
+	<div class='property'>description <div class='value'>
+		Resolves to undefined. Sets the caret offset. If show is true, the editor will scroll to the new caret position.
+	</div></div>
+</div>	
+
+	
+<div class='method'>
+	<div class='property'>name <div class='value'>setSelection(selection)</div></div>
+	<div class='property'>description <div class='value'>
+		Resolves to undefined. Sets the editor's selection.
+	</div></div>
+</div>	
+
+<div class='method'>
+	<div class='property'>name <div class='value'>setText(text, start?, end?)</div></div>
+	<div class='property'>description <div class='value'>
+		Resolves to undefined. Sets the text in the given range.
+	</div></div>
+</div>	
+	
+setText(text, start?, end?)
+	Resolves to undefined. Sets the text in the given range.
+	
+</body>
+</html>

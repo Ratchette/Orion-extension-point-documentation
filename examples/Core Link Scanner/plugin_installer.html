@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Link Scanner Plugin Example</title>
+	
+	<script type="text/javascript" src='script/Deferred.js'></script>
+	<script type="text/javascript" src="script/plugin.js"></script>
+	<script type="text/javascript" src="coreLinkScanner.js"></script>
+</head>
+	
+<body>
+	<h1>[Plugin Name] Link Scanner Plugin</h1>
+
+	<p id="description">
+		[Describe what your plugin does] 
+		Link scanners are declarative services that specify patterns of text to replace with link anchors. Scanners contribute a regular expression pattern to match in the source text. They then provide a link to be inserted for each match. These scanners are used by the text link service to convert text into a DOM node with appropriate anchor and text nodes as children.
+		<br />
+		
+		This example will replace text of the form "bug 123456" with links of the form "https://bugs.eclipse.org/123456"
+	</p>
+
+	<p id="reference">
+		For more information regarding this extension point please see <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_Orion_pages#orion.core.linkScanner">
+		Eclipse Orion's Developer Guide</a> <br/>
+	</p>
+</body>
+</html>

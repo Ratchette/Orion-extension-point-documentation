@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title> Navigate Command Plugin Example</title>
+	
+	<script type="text/javascript" src='script/Deferred.js'></script>
+	<script type="text/javascript" src="script/plugin.js"></script>
+	<script type="text/javascript" src="navigatorCommandExample.js"></script>
+</head>
+	
+<body>
+	<h1>[Plugin Name] Example Navigator Command Plugin</h1>
+
+	<p id="description">
+		[Describe what your plugin does] 
+        The orion.navigate.command service is used to contribute commands to the actions (gear) menu that are relevant to a selected file or folder. When the service is executed, a file object or array of file objects is passed to the service's run method. The command can perform some operation on the provided files. If the command is simply linking to another page, a uriTemplate can be used to specify the link. 
+		 <br />
+		This example performs a google search on the selected file's name
+	</p>
+
+	<p id="reference">
+		For more information regarding this extension point please see <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_the_navigator#orion.navigate.command">
+		Eclipse Orion's Developer Guide</a> <br/>
+	</p>
+</body>
+</html>

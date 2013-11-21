@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Page Content Plugin Example</title>
+	
+	<script type="text/javascript" src='script/Deferred.js'></script>
+	<script type="text/javascript" src="script/plugin.js"></script>
+	<script type="text/javascript" src="pageContentExample.js"></script>
+</head>
+	
+<body>
+	<h1>[Plugin Name] Page Content Outliner Plugin</h1>
+
+	<p id="description">
+		[Describe what your plugin does] 
+		Plugins can contribute page content for a page that is framed by the common Orion banner and equipped with standard Orion page services, such as the related pages menu. The page content itself is rendered in an iframe inside the page. Pages contributed in this way are opened in a URL that specifies the id of the extension. <br />
+		
+		If the page content requires a resource location (for example, it is an editor), then typically the page would be linked using the orion editor extension point instead. This ensures that the page is opened with a specified location parameter in the URL. In that case, please see the <a href='../Edit\ Editor/plugin_installer.js'>Edit Editor extension point</a> for more informaiton<br />
+		
+		This example demonstrates how to show the Pixlr image editor inside Orion.
+	</p>
+
+	<p id="reference">
+		For more information regarding this extension point please see <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_Orion_pages#orion.page.content">
+		Eclipse Orion's Developer Guide</a> <br/>
+		For more information on URI templates, please click <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_Orion_pages#URI_Templates">here</a>.
+		For more information on editor context objects, please click <a href="additional_information/editor_context.html">here</a>.
+	</p>
+</body>
+</html>

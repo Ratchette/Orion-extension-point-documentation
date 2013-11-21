@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Page Link Related Plugin Example</title>
+	
+	<script type="text/javascript" src='script/Deferred.js'></script>
+	<script type="text/javascript" src="script/plugin.js"></script>
+	<script type="text/javascript" src="pageLinkRelatedExample.js"></script>
+</head>
+	
+<body>
+	<h1>[Plugin Name] Page Link Related Plugin</h1>
+
+	<p id="description">
+		[Describe what your plugin does] 
+		The related link service provides a mechanism for plugins to contribute links to the "Related pages" menu in the Orion page header. Clients can specify when the link is applicable using validationProperties and contentType. If the service extension does not describe a name, tooltip, and uriTemplate, the implementation will look for a command extension of the same id. In this way, commands added to the navigator that link to other pages may be considered for the Related pages menu. 
+		<br />
+		
+		The following related page link will determine if the current page's target has a GitUrl that conforms to the URL of git repositories hosted at github.com. If so, then parts of the URL are assigned to variables that are used to build the associated github URL.
+		
+	</p>
+
+	<p id="reference">
+		For more information regarding this extension point please see <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_Orion_pages#orion.page.link.related">
+		Eclipse Orion's Developer Guide</a> <br/>
+		For more information on URI templates, please click <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_Orion_pages#URI_Templates">here</a>.
+		For more information on the Navigator Command extension point, please click <a href="../Navigator\ Command/plugin_installer.html">here</a>.
+	</p>
+</body>
+</html>
