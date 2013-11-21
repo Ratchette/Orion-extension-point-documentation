@@ -10,7 +10,7 @@ List of things left to do:
 
 ALL
 ------
-- track serviceProperties
+- track serviceProperties to find out all possible values?
 - Add liscences to all files ...
 - content_types.html
 - editor_context.html
@@ -19,7 +19,16 @@ ALL
 - there is currently no documentation for drag events or mouse events
 (check bugzilla)
 
-Edit occ
+- change examples with no service implementation to :
+    var serviceImpl = {}; (then still register serviceImpl)
+
+- Order: Headers, service properties, then service implementation
+
+- pictures for all
+- document how I created each one on the blog instead of being a journal
+
+- create a uniform format for html files, all comments, positions of all attributes, etc. 
+- Spellcheck everything!
 
 
 Edit model
@@ -40,6 +49,13 @@ Edit Highlighter
 - Grab grammer funcitonality from other comptuer
 - pictures of both
 - update readme
+
+
+Skipped due to insufficient Documentation
+------------------------------------------
+Team client services
+    orion.git.privider
+    orion.net.ssh
 
 
 TODO

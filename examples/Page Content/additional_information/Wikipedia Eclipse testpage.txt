@@ -1,0 +1,308 @@
+=Exerpt from Wikipedia's page on the Eclipse IDE=
+
+{{Other uses of|Eclipse}}
+{{Citation style|date=November 2012|details=Violates Wikipedia:External links: "Wikipedia articles may include links to web pages outside Wikipedia (external links), but they should not normally be used in the body of an article."}}
+{{jargon|date=November 2012}}
+{{Infobox software
+| name                   = Eclipse
+| logo                   = [[File:Eclipse-logo.png]]
+| screenshot             = [[File:Eclipse 4.3.Kepler screenshot.png|250px]]
+| caption                = Eclipse 4.3 Kepler in the J2EE perspective
+| developer              = [[Eclipse Foundation]]
+| latest release version = 4.3.1 (Kepler SR1)
+| latest release date    = {{start date and age|2013|09|28|df=yes}}
+| latest preview version = 
+| latest preview date    = 
+| platform               = [[Java SE]], [[Standard Widget Toolkit]]
+| operating system       = [[Cross-platform]]: [[Linux]], [[Mac&nbsp;OS&nbsp;X]], [[Solaris (operating system)|Solaris]], [[Microsoft Windows|Windows]]
+| language               = Multilingual
+| programming language   = [[Java (programming language)|Java]]<ref>{{cite web|url=http://www.lextrait.com/Vincent/implementations.html|title=The Programming Languages Beacon, v10.3|first=Vincent|last=Lextrait|month=July|year=2010|accessdate=5 September 2010 |archiveurl=http://archive.is/20120530/http://www.lextrait.com/Vincent/implementations.html |archivedate=2012-05-30}}</ref>
+| status                 = Active
+| genre                  = [[Integrated development environment]] (IDE)
+| license                = [[Eclipse Public License]]
+| website                = {{URL|http://www.eclipse.org}}
+}}
+
+In [[computer programming]], '''Eclipse''' is a multi-language [[Integrated development environment]] (IDE)  comprising a base [[workspace]] and an extensible [[plug-in (computing)|plug-in]] system for customizing the environment. It is written mostly in [[Java (programming language)|Java]]. It can be used to develop applications in Java and, by means of various plug-ins, other [[programming language]]s including [[Ada (programming language)|Ada]], [[C (programming language)|C]],  {{nowrap|[[C++]]}}, [[COBOL]], [[Fortran]], [[Haskell (programming language)|Haskell]], [[JavaScript]], [[Lasso (programming language)|Lasso]], [[Perl]], [[PHP]], [[Python (programming language)|Python]], [[R (programming language)|R]], [[Ruby (programming language)|Ruby]] (including [[Ruby on Rails]] framework), [[Scala (programming language)|Scala]], [[Clojure]], [[Groovy (programming language)|Groovy]], [[Scheme (programming language)|Scheme]], and [[Erlang (programming language)|Erlang]]. It can also be used to develop packages for the software [[Mathematica]]. Development environments include the Eclipse Java development tools (JDT) for Java and Scala, Eclipse CDT for {{nowrap|C/C++}} and Eclipse PDT for PHP, among others.
+
+The initial [[codebase]] originated from [[IBM VisualAge]].<ref name="VisualAge">{{cite web | work=Eclipse Wiki | title=Where did Eclipse come from? | url=http://wiki.eclipse.org/FAQ_Where_did_Eclipse_come_from%3F | accessdate=16 March 2008}}</ref> The Eclipse [[software development kit]] (SDK), which includes the Java development tools, is meant for Java developers. Users can extend its abilities by installing plug-ins written for the Eclipse Platform, such as development toolkits for other programming languages, and can write and contribute their own plug-in modules.
+
+Released under the terms of the [[Eclipse Public License]], Eclipse [[Software development kit|SDK]] is [[free and open source software]] (although it is incompatible with the [[GNU General Public License]]<ref>{{cite web | author = Free Software Foundation, Inc. | title = Various Licenses and Comments About Them | date = 5 November 2012 | url = http://www.gnu.org/licenses/license-list.html#EPL}}</ref>). It was one of the first IDEs to run under [[GNU Classpath]] and it runs without problems under [[IcedTea]].
+
+== History ==
+Eclipse began as an [[IBM Canada]] project. [[Object Technology International]] (OTI), which had previously marketed the [[Smalltalk]]-based [[VisualAge]] family of [[integrated development environment]] (IDE) products,<ref name="VisualAge"/> developed the new product as a Java-based replacement.<ref>{{cite web | author = Rick DeNatale | title = Will It Go Round in Circles? | date = 15 October 2008 | url = http://talklikeaduck.denhaven2.com/articles/2008/10/15/will-it-go-round-in-circles}}</ref>
+In November 2001, a consortium was formed with a board of stewards to further the development of Eclipse as open-source software. It is estimated that IBM had already invested close to $40 million by that time.<ref>Mike Milinkovich, [http://asmarterplanet.com/blog/2011/11/ibm_and_eclipse_10_years.html IBM and Eclipse: A Decade of Software Innovation], Building a Smarter Planet, November 3rd, 2011</ref> The original members were [[Borland]], [[IBM]], [[Micro Focus International|Merant]], [[QNX Software Systems]], [[Rational Software]], [[Red Hat]], [[SuSE]], [[Borland Together|TogetherSoft]] and [[WebGain]].<ref>[http://www.eclipse.org/org/#history About the Eclipse Foundation:History of Eclipse]</ref> The number of stewards increased to over 80 by the end of 2003. In January 2004, the [[Eclipse Foundation]] was created.<ref>{{cite web | title = About the Eclipse Foundation | url = http://www.eclipse.org/org | accessdate =13 August 2008 |publisher = The Eclipse Foundation}}</ref>
+
+Eclipse 3.0 (released on 21 June 2004) selected the [[OSGi]] Service Platform specifications as the runtime architecture.<ref>{{cite web | title = OSGi&nbsp;— the footings of the foundation of the platform | url = http://www.eclipse.org/osgi/| accessdate =25 June 2008 |publisher = The Eclipse Foundation}}</ref>
+
+The [[Association for Computing Machinery]] recognized Eclipse with the 2011 [[ACM Software Systems Award]] on 26 April 2012.<ref>{{cite web | title = ACM Honors Computing Innovators for Advances in Research, Education, and Industry | url= http://www.acm.org/press-room/news-releases/2012/technical-awards-2011 | accessdate = 26 April 2012 | publisher = Association for Computing Machinery}}</ref>
+
+=== Licensing ===
+The [[Eclipse Public License]] (EPL) is the fundamental license under which Eclipse projects are released.<ref>{{cite web | title = Eclipse Public License | url = http://www.eclipse.org/org/documents/epl-v10.php | accessdate = 2012-02-24  }}</ref>  Some projects require dual licensing, for which the Eclipse Distribution License (EDL) is available, although use of this license must be applied for and is considered on a case-by-case basis.
+
+Eclipse was originally released under the [[Common Public License]], but was later relicensed under the Eclipse Public License. The [[Free Software Foundation]] has said that both licenses are [[free software]] licenses, but are incompatible with the [[GNU General Public License]] (GPL).<ref>{{cite web | title = Various Licenses and Comments about Them | url = http://www.gnu.org/licenses/license-list.html | accessdate =20 May 2007 | date = 17 May 2007 | publisher = Free Software Foundation}}</ref> [[Mike Milinkovich]], of the Eclipse Foundation commented that moving to the GPL would be considered when version 3 of the GPL was released.<ref>{{cite web | title = Moglen: GPL 3.0 Rewrite Drive Is No Democracy | author = Peter Galli | url = http://www.eweek.com/article2/0,1895,1881088,00.asp | date = 2 November 2005 | accessdate =20 May 2007 | publisher = [[eWeek]]}}</ref><!-- update? -->
+
+=== Name ===
+According to Lee Nackman, [[Chief Technology Officer]] of IBM's [[Rational Software|Rational division]] (originating in 2003) at that time, the name "Eclipse" (dating from at least 2001) was not a wordplay on [[Sun Microsystems]], as the product's primary competition at the time of naming was [[Microsoft Visual Studio]] (which it, ''Eclipse'', was to eclipse).<ref>
+{{cite web |url = http://www.eweek.com/c/a/Application-Development/Eclipse-Behind-the-Name |title = Eclipse: Behind the Name |date = 20 May 2005 | accessdate =11 August 2008 |author=Darryl K. Taft |work=eWeek.com |publisher=Ziff Davis Enterprise Holdings}}</ref>
+
+==Releases==
+Since 2006, the Foundation has coordinated an annual ''Simultaneous Release''. Each release includes the Eclipse Platform as well as a number of other Eclipse projects.
+
+So far, each Simultaneous Release has occurred on the fourth Wednesday of June.
+
+{| class="wikitable sortable"
+|-
+! Codename
+! Date
+! Platform version
+! Projects
+|-
+| N/A
+| 21 June 2004
+| {{Version |o |3.0<ref>{{cite web|url=http://www.eclipse.org/org/press-release/jun212004r30pr.html |title=Eclipse Foundation |publisher=Eclipse.org |date=2004-06-21 |accessdate=2013-06-16}}</ref>| sortKey="3.0"}}
+|
+|-
+| N/A
+|28 June 2005
+|  {{Version |o |3.1 | sortKey="3.1"}}
+|
+|-
+| Callisto
+| 30 June 2006
+| {{Version |o |3.2 | sortKey="3.2"}}
+| [http://www.eclipse.org/callisto/callistoprojects.php Callisto projects]
+|-
+| Europa
+| 29 June 2007
+| {{Version |o |3.3 | sortKey="3.3"}}
+| [http://wiki.eclipse.org/index.php/Europa_Simultaneous_Release Europa projects]
+|-
+| Ganymede
+| 25 June 2008
+| {{Version |o |3.4 | sortKey="3.4"}}
+| [http://wiki.eclipse.org/index.php/Ganymede_Simultaneous_Release Ganymede projects]
+|-
+| Galileo
+| 24 June 2009
+| {{Version |o |3.5 | sortKey="3.5"}}
+| [http://wiki.eclipse.org/Galileo Galileo projects]
+|-
+| Helios
+| 23 June 2010
+| {{Version |co |3.6 | sortKey="3.6"}}
+| [http://wiki.eclipse.org/index.php/Helios Helios projects]
+|-
+| Indigo
+| 22 June 2011
+| {{Version |co |3.7 | sortKey="3.7"}}<ref group="Notes">There is also a [http://download.eclipse.org/eclipse/downloads/eclipse3x.html 3.8 release of Eclipse], but it is not promoted anywhere on their web site, directing interested users to 4.2. Eclipse 3.8 provides bugfixes for Indigo & adds Java 7 support, but is not a 'packaged distribution' release, and will not be maintained after 4.3 "Kepler" is released. Features and plugins equivalent to a packaged distribution may be added from within the IDE.</ref>
+| [http://wiki.eclipse.org/Indigo Indigo projects]
+|-
+| Juno
+| 27 June 2012
+| {{Version |co |4.2<ref>{{cite web|url=http://www.eclipse.org/org/press-release/20120627_junorelease.php |title=Eclipse Juno Release Train Has Arrived |publisher=Eclipse.org |date=2012-06-27 |accessdate=2013-06-16}}</ref> | sortKey="4.2"}}
+| [http://wiki.eclipse.org/Juno Juno projects]
+|-
+| Kepler
+| 26 June 2013
+| {{Version |c |4.3 | sortKey="4.3"}}
+| [http://wiki.eclipse.org/Kepler Kepler projects]
+|-
+| Luna
+| 25 June 2014 (planned)
+| {{Version |p |4.4 | sortKey="4.4"}}
+| [http://wiki.eclipse.org/Luna Luna projects]
+|}
+
+<small>{{Version|l|show=11101}}</small>
+<references group="Notes" />
+
+== Architecture ==
+The Eclipse Platform uses plug-ins to provide all the functionality within and on top of the runtime system. The Eclipse Platform's runtime system is based on [[Equinox (OSGi)|Equinox]], an implementation of the [[OSGi]] core framework specification.{{fact|date=September 2013}}
+
+In addition to allowing the Eclipse Platform to be extended using other [[programming language]]s such as [[C (programming language)|C]] and [[Python (programming language)|Python]], the plug-in framework allows the Eclipse Platform to work with typesetting languages like [[LaTeX]],<ref>[http://texlipse.sourceforge.net/ TeXlipse homepage&nbsp;– LaTeX for Eclipse]</ref> networking applications such as [[telnet]] and [[database management system]]s. The plug-in architecture supports writing any desired extension to the environment, such as for [[configuration management]]. Java and [[Concurrent Versions System|CVS]] support is provided in the Eclipse [[Software development kit|SDK]], with support for other [[version control system]]s provided by third-party plug-ins.
+
+With the exception of a small run-time kernel, everything in Eclipse is a plug-in. This means that every plug-in developed integrates with Eclipse in exactly the same way as other plug-ins; in this respect, all features are "created equal".{{Citation needed|date=January 2012}} Eclipse provides plug-ins for a wide variety of features, some of which are through third parties using both free and commercial models. Examples of plug-ins include a [[Unified Modeling Language|UML]] plug-in for Sequence and other UML diagrams, a plug-in for DB Explorer, and many others.
+
+The Eclipse SDK includes the Eclipse Java development tools (JDT), offering an IDE with a built-in [[Incremental compiler|incremental]] Java compiler and a full model of the Java source files. This allows for advanced [[refactor]]ing techniques and code analysis. The IDE also makes use of a ''workspace'', in this case a set of [[metadata]] over a flat filespace allowing external file modifications as long as the corresponding workspace "resource" is refreshed afterwards.
+
+Eclipse implements [[GUI widget|widgets]] through a widget toolkit for Java called [[Standard Widget Toolkit|SWT]], unlike most Java applications, which use the Java standard [[Abstract Window Toolkit]] (AWT) or [[Swing (Java)|Swing]]. Eclipse's user interface also uses an intermediate [[graphical user interface]] layer called [[JFace]], which simplifies the construction of applications based on SWT.
+
+Language packs developing by the "Babel project" provide translations into over a dozen [[natural language]]s.<ref>[http://babel.eclipse.org/ Eclipse Babel Project]</ref>
+
+== Rich Client Platform {{anchor|RCP}} ==
+Eclipse provides the [[Rich Client Platform]] (RCP) for developing general purpose applications. The following components constitute the rich client platform:
+* [[Equinox (OSGi)|Equinox OSGi]]&nbsp;– a standard bundling framework.
+* Core platform&nbsp;– boot Eclipse, run [[Plug-in (computing)|plug-ins]]{{Citation needed|date=January 2012}}.
+* [[Standard Widget Toolkit]] (SWT)&nbsp;– a portable [[widget toolkit]].
+* [[JFace]]&nbsp;– viewer classes to bring [[model view controller]] programming to SWT, file buffers, text handling, text editors.
+* Eclipse Workbench&nbsp;– views, editors, perspectives, wizards.
+Examples of rich client applications based on Eclipse are:
+* [[IBM Notes]] 8 and 9
+* Novell/[[NetIQ]] Designer for Identity Manager
+* [[Apache Directory]] Studio
+
+== Server platform ==
+Eclipse supports development for [[Apache Tomcat|Tomcat]], [[GlassFish]] and many other servers and is often capable of installing the required server (for development) directly from the IDE. It supports remote debugging, allowing the user to watch variables and step through the code of an application that is running on the attached server.
+
+== Web Tools Platform ==
+The Eclipse Web Tools Platform (WTP) project is an extension of the Eclipse platform with tools for developing Web and Java EE applications. It includes source and graphical editors for a variety of languages, wizards and built-in applications to simplify development, and tools and APIs to support deploying, running, and testing apps.<ref>{{cite web
+| accessdate =2 May 2011
+| location = http://eclipse.org/
+| publisher = Eclipse
+| title = Eclipse Web Tools Platform Project
+| quote = The Eclipse Web Tools Platform (WTP) project extends the Eclipse platform with tools for developing Web and Java EE applications. It includes source and graphical editors for a variety of languages, wizards and built-in applications to simplify development, tools to support deploying, running, and testing apps, and APIs for extending its functionality.
+| url = http://eclipse.org/projects/project_summary.php?projectid=webtools}}</ref>
+
+== Modeling Platform ==
+The Modeling project contains all the official projects of the Eclipse Foundation focusing on model-based development technologies. They are all compatible with the Eclipse Modeling Framework created by IBM. Those projects are separated in several categories: Model Transformation, Model Development Tools, Concrete Syntax Development, Abstract Syntax Development, Technology and Research, and Amalgam.
+
+=== Model Transformation ===
+Model Transformation projects uses [[Eclipse Modeling Framework|EMF]] based models as an input and produce either a model or text as an output. Model to model transformation projects includes [[ATLAS Transformation Language|ATL]], an open source transformation language and toolkit used to transform a given model or to generate a new model from a given [[Eclipse Modeling Framework|EMF]] model. Model to text transformation projects contains [[Acceleo]], an implementation of [[MOFM2T]], a standard model to text language from the [[Object Management Group|OMG]]. [[Acceleo]] is an open source code generator that can generate any textual language (Java, PHP, Python, etc.) from [[Eclipse Modeling Framework|EMF]] based models defined with any metamodel ([[Unified Modeling Language|UML]], [[Systems Modeling Language|SysML]], etc.).
+
+=== Model Development Tools ===
+Model Development Tools projects are implementations of modeling standard used in the industry like [[Unified Modeling Language|UML]] or [[Object Constraint Language|OCL]] and their toolkit. Among those projects can be found implementation of the following standard:
+* [[Unified Modeling Language|UML]]
+* [[Systems Modeling Language|SysML]]
+* [[Object Constraint Language|OCL]]
+* [[Business Process Model and Notation|BPMN]]
+* IMM
+* [[Semantics of Business Vocabulary and Business Rules|SBVR]]
+* [[XML Schema (W3C)|XSD]]
+* NEDA
+
+=== Concrete Syntax Development ===
+The Concrete Syntax Development project contains the Graphical Modeling Framework, an Eclipse based framework dedicated to the graphical representation of [[Eclipse Modeling Framework|EMF]] based models.
+
+=== Abstract Syntax Development ===
+The Abstract Syntax Development project hosts the Eclipse Modeling Framework, core of most of the modeling project of the Eclipse Foundation and the framework available for [[Eclipse Modeling Framework|EMF]] like [[Connected Data Objects|CDO]], EMF query or EMF validation.
+
+=== Technology and Research ===
+Technology and Research projects are prototypes of Modeling project, this project is used to host all the modeling projects of the Eclipse Foundation during their incubation phase.
+
+=== Amalgam ===
+Amalgam provides the packaging and integration between all the available modeling tools for the Eclipse package dedicated to modeling tools.
+
+== Extensions ==
+Eclipse supports a rich selection of extensions, adding support for [[Python (programming language)|Python]] via [[pydev]], [[Android (operating system)|Android]] development via [[Google]]'s ADT, [[JavaFX]] support via e(fx)clipse, and many others at the [http://marketplace.eclipse.org/ Eclipse Marketplace].
+
+== Alternative Distributions ==
+
+A number of alternative distributions exist in the Eclipse project.
+
+=== Eclipse PDT (PHP Development Tools) ===
+
+The PHP Development Tools project provides a PHP Development Tools framework for the Eclipse platform. The project encompasses all development components, including code-completion, develop PHP and facilitate extensibility. It leverages the existing Eclipse Web Tools Platform (WTP)<ref name="wtp">[[Web Tools Platform]]</ref> and Dynamic Languages Toolkit (DLTK).<ref name="pdt">[http://www.eclipse.org/projects/project.php?id=tools.pdt Eclipse PDT]</ref>
+
+== See also ==
+{{Portal|Free software|Java|Computer programming}}
+* [[Comparison of integrated development environments]]
+* [[Comparison of integrated development environments#Java|Comparison of integrated development environments for Java]]
+* [[List of Eclipse-based software]]
+* [[List of Eclipse projects]]
+* [[NetBeans]]
+
+== References ==
+{{Reflist|30em}}
+
+== Further reading ==
+{{Refbegin|2}}
+* [http://www.vogella.de/articles/RichClientPlatform/article.html How to develop an Eclipse RCP application]
+* [http://www.ibm.com/developerworks/library/os-eclipse-plugindev1/index.html?ca=dgr-eclipse-1 How to develop an Eclipse Plug-in Part 1]
+* [http://www-128.ibm.com/developerworks/opensource/library/os-eclipse-plugindev2/?ca=dgr-eclipse-1 How to develop an Eclipse Plug-in Part 2]
+{{Refend}}
+
+==Bibliography==
+{{refbegin}}
+* {{cite book
+| first1      = Vladimir
+| last1       = Silva
+| date        = 11 March 2009
+| title       = Practical Eclipse Rich Client Platform Projects
+| publisher   = [[Apress]]
+| edition     = 1st
+| page        = 352
+| isbn        = 1-4302-1827-4
+| url         = http://www.apress.com/9781430218272
+}}
+* {{cite book
+| first1      = Ed
+| last1       = Burnette
+| date        = 12 August 2005
+| title       = Eclipse IDE Pocket Guide
+| publisher   = [[O'Reilly Media]]
+| edition     = 1st
+| page        = 128
+| isbn        = 978-0-596-10065-0
+| url         = http://oreilly.com/catalog/9780596100650
+}}
+* {{cite book
+| first       = Steve
+| last        = Holzner
+| date        = 1 May 2004
+| title       = Eclipse
+| publisher   = [[O'Reilly Media]]
+| edition     = 1st
+| page        = 317
+| isbn        = 0-596-00641-1
+| url         = http://oreilly.com/catalog/9780596006419
+}}
+* {{cite book
+| first1     = Jeff
+| last1      = McAffer
+| first2     = Jean-Michel
+| last2      = Lemieux
+| first3     = Chris
+| last3      = Aniszczyk
+| date       = 22 May 2010
+| title      = Eclipse Rich Client Platform
+| publisher  = [[Addison-Wesley Professional]]
+| edition    = 2nd
+| page       = 552
+| isbn       = 0-321-60378-8
+| url        = http://eclipsercp.org/2010/04/eclipse-rcp-2nd-edition-going-to-press/
+}}
+{{refend}}
+
+== External links ==
+{{Commons|Eclipse IDE}}
+{{Wikibooks|Eclipse}}
+*{{Official website|www.eclipse.org}}
+*[http://marketplace.eclipse.org/ Eclipse Marketplace]
+*[http://wiki.eclipse.org/ Eclipsepedia]
+*[http://www-01.ibm.com/software/rational/eclipse/ IBM Rational and Eclipse]
+*[http://eclipsesource.com/blogs/2012/05/10/eclipse-4-final-sprint-part-1-the-e4-application-model/ Eclipse 4 RCP Tutorial] Tutorial for Eclipse 4
+*[https://developer.palm.com/content/api/dev-guide/pdk/eclipse-gdb-debugging.html Using Eclipse as a Front-End to GDB Debugger]
+
+{{Eclipse Foundation}}
+{{Eclipse plugins}}
+{{FOSS}}
+{{Integrated development environments for C and C++}}
+
+{{use dmy dates|date=January 2012}}
+
+{{DEFAULTSORT:Eclipse (Software)}}
+[[Category:Integrated development environments]]
+[[Category:Free integrated development environments]]
+[[Category:Android (operating system) development software]]
+[[Category:Linux integrated development environments]]
+[[Category:Free HTML editors]]
+[[Category:Free UML tools]]
+{[free:hdf]}
+[[Category:IBM software]]
+[[Category:Eclipse (software)]]
+[[Category:Python (programming language)]]
+[[Category:Debuggers]]
+[[Category:Code navigation tools]]
+[[Category:Cross-platform free software]]
+[[Category:Free software programmed in Java]]
+[[Category:Java development tools]]
+[[Category:Java platform]]
+[[Category:Formerly proprietary software]]
+[[Category:Software using the Eclipse license]]
+[[Category:Linux programming tools]]
+[[Category:Software development kits]]
+[[Category:Windows software]]
+[[Category:Mac OS software]]
+[[Category:Linux software]]
+[[Category:OS X text editors]]

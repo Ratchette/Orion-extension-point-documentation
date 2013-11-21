@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Core Content Types Plugin Example</title>
+	
+	<script type="text/javascript" src='script/Deferred.js'></script>
+	<script type="text/javascript" src="script/plugin.js"></script>
+	<script type="text/javascript" src="navigatorOpenWithExample.js"></script>
+</head>
+	
+<body>
+	<h1>[Plugin Name] Core Content Types Plugin</h1>
+
+	<p id="description">
+		[Describe what your plugin does]
+		
+		The content type service tells Orion about a new kind of file. The content types contributed to this service don't have any direct effect on the Orion UI, but they can be referred to by other services that need to associate themselves with a particular kind of file. For an example, see <a href="../Navigator\ Open\ With/plugin_installer.html">the example for orion.navigate.openWith.</a>.
+
+The Orion client UI defines a bunch of content types by default, including JavaScript, CSS, HTML, Markdown, and several others. See webEditingPlugin.js in the client UI code for a full list. (If you are contributing tools that deal with one of Orion's predefined content types, you must use the same content type ID rather than define your own, as file extensions can be registered by only a single content type.)  <br />
+
+		This exmample defines a new type of image file type for Encapsulated Post Script (EPS) images.
+	</p>
+
+	<p id="reference">
+		For more information regarding this extension point please see <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_the_navigator#orion.core.contenttype">
+		Eclipse Orion's Developer Guide</a> <br/>
+		For a list of existing content types, please click <a href="additional_information/content_types.html">here</a>.
+	</p>
+</body>
+</html>
