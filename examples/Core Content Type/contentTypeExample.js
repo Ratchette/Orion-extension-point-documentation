@@ -31,19 +31,19 @@ window.onload = function(){
 	     * 
 	     * contentTypes.name {String} The user-readable name of the content type. 
 	     * 
-	     * [OPTIONAL] extension {String[]} Array of file extensions characterizing this content type. 
+	     * [OPTIONAL] contentTypes.extension {String[]} Array of file extensions characterizing this content type. 
 	     *     (Extensions are given without the leading "." character). 
 	     *     NOTE: extensions are unique. if two content types both register against the same extension, 
 	     *         one content type will be chosen arbitrarily over the other.
 	     * 
-	     * [OPTIONAL] filename {String[]} Array of filenames characterizing this content type. 
+	     * [OPTIONAL] contentTypes.filename {String[]} Array of filenames characterizing this content type. 
 	     *     Use this when a type does not have a characteristic file extension, but rather a
 	     *     filename. (For example, "Makefile", "README", "passwd").
 	     * 
-	     * [OPTIONAL] extends {String}
+	     * [OPTIONAL] contentTypes.extends {String}
 	     *     If this content type is a subtype of another, this gives the parent content type's ID.
 	     * 
-	     * [OPTIONAL] image {String}
+	     * [OPTIONAL] contentTypes.image {String}
 	     *     URL of an image to display beside files of this type (for example, in the Orion navigator)
 	     */
 	    contentTypes:

@@ -89,16 +89,16 @@ window.onload = function(){
 	 *     replace strings) that can be used to further modify a variable value used in 
 	 *     a URI template.
 	 */
-        validationProperties: [{
-            source: "GitUrl", 
-            match: "github\.com.*\.git", 
-            variableName: "GitHubLocation", 
-            variableMatchPosition: "only",
-            replacements: [
-                {pattern: ":", replacement: "/"},
-                {pattern: ".git$", replacement: ""}
-            ]
-        }]
+		validationProperties: [{
+	        source: "GitUrl", 
+	        match: "github\.com.*\.git", 
+	        variableName: "GitHubLocation", 
+	        variableMatchPosition: "only",
+	        replacements: [
+	            {pattern: ":", replacement: "/"},
+	            {pattern: ".git$", replacement: ""}
+	        ]
+	    }]
 	};
 	
 	
