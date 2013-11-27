@@ -50,12 +50,42 @@ Edit Highlighter
 - pictures of both
 - update readme
 
+Shell Type
+-----------
+- Fix the stringify method???
 
-Skipped due to insufficient Documentation
-------------------------------------------
+
+Project Handler
+----------------
+Come back to it
+    
+
+
+Remaining
+----------
+- Read through http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Long_running_operations_in_services_and_plugins
+- orion.core.file
+- orion.core.setting
+- orion.cm.managedservice
+- orion.cm.metatype
+
+
+
+Skipped
+-----------------------
 Team client services
     orion.git.privider
     orion.net.ssh
+User interface services
+    ALL
+Configuration services
+    orion.cm.configadmin
+Core client services
+    orion.core.contentTypeRegistry
+    orion.core.marker
+    orion.core.preference
+    orion.core.textlink
+
 
 
 TODO

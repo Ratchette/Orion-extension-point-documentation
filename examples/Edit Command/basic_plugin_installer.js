@@ -64,7 +64,7 @@ window.onload = function(){
 		 * using the editor context object. 	
 		 * eg. by using setText() or setSelection()
 		 */
-//		// 4.0 compliance not implemented yet
+		// 4.0 compliance not implemented yet
 //		execute: function(editorContext, options){
 //			var content;
 //

@@ -6,14 +6,35 @@
 /*global orion window Deferred*/
 
 window.onload = function(){
-	function removeUserInformation(gitUrl){
-			if(gitUrl.indexOf("@")>0 && gitUrl.indexOf("ssh://")>=0){
-				return gitUrl.substring(0, gitUrl.indexOf("ssh://") + 6) + gitUrl.substring(gitUrl.indexOf("@")+1);
-			}
-			return gitUrl;
-		}
-	
 	var serviceProvider = {
+		/**
+		 * [OPTIONAL] initDependency (dependency, params, projectMetadata)
+		 * 		if this method is implemented, users will be able to add associated content of the 
+		 * 		given type. This function should initialize the dependency in user's workspace and 
+		 * 		return the DependencyDescription
+		 * 
+		 * @param dependency {DependencyDescription} if the invocation of this method contains
+		 * 		dependency, it means that user had the dependency defined and used Connect action
+		 * 		to initialize its content in his workspace.
+		 * 
+		 * 		dependency.Type  The type project that you are adding this dependancy to
+		 * 		dependency.Name  The address project that you are adding this dependancy to
+		 * 		dependency.Location should describe the dependency in a way it allows to recreate
+		 * 			it in the user's workspace. 
+		 * 
+		 * @param params parameters inputted by the user while requesting to create a new dependency.
+		 * 		User is at first not prompted for parameters if he chooses to connect to an exiting dependency.
+		 * 		Then, DependencyDescription is passed as dependency.
+		 * 		This function may request for extra parameters in the same way initProject does.
+		 * 
+		 * @param projectmetadata {Object} An object with project metadata, in particular this object
+		 * 		contains WorkspaceLocation.
+		 */
+		initDependency: function(dependency, params, projectMetadata){
+			var gitUrl = removeUserInformation(dependency.Location || params.url);
+			return this._cloneRepository(gitUrl, params, projectMetadata.WorkspaceLocation);
+		},
+	    
 		// FIXME - the parameter descriptions here are incomplete
 		/**
 		 * getDependencyDescription (item)
@@ -21,26 +42,19 @@ window.onload = function(){
 		 * 		This function is only invoked when validationProperties are matched with item
 		 * 
 		 * @return DependencyDescription {Object}
-		 * 		DependencyDescription.Type
+		 * 		DependencyDescription.Type   
 		 * 		DependencyDescription.Name
 		 * 		DependencyDescription.Location
 		 */
 		getDependencyDescription: function(item){
-			if(!item.Git){
-				return null;
-			}
-			var deferred = new Deferred();
-			gitClient.getGitClone(item.Git.CloneLocation).then(
-				function(clone){
-					if(clone.Children){
-						clone = clone.Children[0];
-					}
-					if(clone.GitUrl){
-						var gitInfo = parseGitUrl(clone.GitUrl);
-						deferred.resolve({Type: "git", Location: removeUserInformation(clone.GitUrl), Name: (gitInfo.repoName || clone.Name) + " at " + gitInfo.serverName});
-					}
-				},deferred.reject, deferred.progress
-			);
+		    var description = {
+		        Type: "newType", 
+		        Location: "github.com/Ratchette/Orion-extension-point-documentation", 
+		        Name: "example repo"
+		    };
+		    
+		    var deferred = new Deferred();
+			deferred.resolve(description);
 			return deferred;
 		},
 		
@@ -61,58 +75,6 @@ window.onload = function(){
 				Location: removeUserInformation(params.url)
 			};
 		},
-		
-		
-		/**
-		 * [OPTIONAL] initProject (params, projectMetadata)
-		 * 		If this method is implemented, users will able to add projects of given type.
-		 * 		The function should initialize project in the workspace (including adding project.json
-		 * 		to it) and return the project description containing at least ContentLocation
-		 * 
-		 * @param params {Object} an object of parameters collected from the user based on description
-		 * 		in addParamethers attribute. If the list of parameters is not complete, rejecting the 
-		 * 		returned deferred with additional addParamethers attribute will invoke asking user
-		 * 		for additional parameters.
-		 * 
-		 * @param projectMetadata {Object} contains an object with some extra potential project 
-		 * 		metadata, in particular this object contains WorkspaceLocation.
-		 * 
-		 * Afterwords all collected parameters will be resent, so there is no need to remember 
-		 * 		previously sent params.
-		 */
-		initProject: function(params, projectMetadata){
-			var gitUrl = removeUserInformation(params.url);
-			return this._cloneRepository(gitUrl, params, projectMetadata.WorkspaceLocation, true);
-		},
-		
-		
-		/**
-		 * [OPTIONAL] initDependency (dependency, params, projectMetadata)
-		 * 		if this method is implemented, users will be able to add associated content of the 
-		 * 		given type. This function should initialize the dependency in user's workspace and 
-		 * 		return the DependencyDescription
-		 * 
-		 * @param dependency {DependencyDescription} if the invocation of this method contains
-		 * 		dependency, it means that user had the dependency defined and used Connect action
-		 * 		to initialize its content in his workspace.
-		 * 
-		 * 		dependency.Type
-		 * 		dependency.Name
-		 * 		dependency.Location should describe the dependency in a way it allows to recreate
-		 * 			it in the user's workspace. 
-		 * 
-		 * @param params parameters inputted by the user while requesting to create a new dependency.
-		 * 		User is at first not prompted for parameters if he chooses to connect to an exiting dependency.
-		 * 		Then, DependencyDescription is passed as dependency.
-		 * 		This function may request for extra parameters in the same way initProject does.
-		 * 
-		 * @param projectmetadata {Object} An object with project metadata, in particular this object
-		 * 		contains WorkspaceLocation.
-		 */
-		initDependency: function(dependency, params, projectMetadata){
-			var gitUrl = removeUserInformation(dependency.Location || params.url);
-			return this._cloneRepository(gitUrl, params, projectMetadata.WorkspaceLocation);
-		},
 
 
 		/**
@@ -122,34 +84,8 @@ window.onload = function(){
 		 */
 		// FIX (incomplete)
 		getAdditionalProjectProperties: function(item, projectMetadata){
-			if(!item.Git){
-				return null;
-			}
-			
 			var deferred = new Deferred();
-			gitClient.getGitClone(item.Git.CloneLocation).then(
-			function(clone){
-				if(clone.Children){
-					clone = clone.Children[0];
-				}
-				deferred.resolve([
-					{
-						name: "Git",
-						children: [
-							{
-								name: "Git Url",
-								value: clone.GitUrl
-							},
-							{
-								name: "Git Status",
-								value: "Git Status",
-								href: "{+OrionHome}/git/git-status.html#" + item.Git.StatusLocation
-							}
-						]
-					}
-				]);
-			},deferred.reject, deferred.progress
-			);
+			
 			return deferred;
 		}
 	};
@@ -174,9 +110,9 @@ window.onload = function(){
 	 * 
 	 * type {String} the unique identifier of the project type (for instance git or jazz)
 	 * 
-	 * addParamethers {ParameterDefinition[]} Array of objects containing id String, 
-	 * 		type String describing one of the html5 input types or "textarea" and
-	 * 		name being a display String for the parameter. 
+	 * addParamethers {ParameterDefinition[]} Array of objects containing id {String} and
+	 * 		type {String} describing one of the html5 input types or "textarea"
+	 * 		name {String} being a display String for the parameter. 
 	 * 
 	 * 		Those parameters will be used to generate an input form when user tries init a new 
 	 * 		project or dependency.
@@ -241,11 +177,13 @@ window.onload = function(){
 	 * 		in a separate dialog when the user clicks "More" in the input form with addParameters
 	 */
 	var serviceProperties = {
-		id: "orion.git.projecthandler",
-		type: "git",
-		addParamethers: [{id: "url", type: "url", name: "Url:"}],
-		addDependencyName: "Add Git Repository",
-		addDependencyTooltip: "Clone git repository and add it to this project",
+		id: "orion.git.projecthandler.example",
+		type: "newType",
+		addParamethers: [{id: "name", type: "name", name: "Name:"}],
+		
+		addDependencyName: "Add an example folder",
+		addDependencyTooltip: "Create a new folder and add it to this project",
+		
 		addProjectName: "Create a project from a Git Repository",
 		addProjectTooltip: "Clone a Git Repository and add it as a project",
 		actionComment: "Cloning ${url}",
@@ -262,3 +200,40 @@ window.onload = function(){
 	provider.registerServiceProvider("orion.project.handler", serviceProvider, serviceProperties);
 	provider.connect();
 };
+
+
+
+/**
+		 * [OPTIONAL] initProject (params, projectMetadata)
+		 * 		If this method is implemented, users will able to add projects of given type.
+		 * 		The function should initialize project in the workspace (including adding project.json
+		 * 		to it) and return the project description containing at least ContentLocation
+		 * 
+		 * @param params {Object} an object of parameters collected from the user based on description
+		 * 		in addParamethers attribute. If the list of parameters is not complete, rejecting the 
+		 * 		returned deferred with additional addParamethers attribute will invoke asking user
+		 * 		for additional parameters.
+		 * 
+		 * @param projectMetadata {Object} contains an object with some extra potential project 
+		 * 		metadata, in particular this object contains WorkspaceLocation.
+		 * 
+		 * Afterwords all collected parameters will be resent, so there is no need to remember 
+		 * 		previously sent params.
+		 */
+		initProject: function(params, projectMetadata){
+            var that = this;
+                        var deferred = new Deferred();
+                        this.fileClient.createFile(contentLocation, "project.json").then(function(fileMetadata){
+                                if(projectMetadata){
+                                        that.fileClient.write(fileMetadata.Location, JSON.stringify(projectMetadata)).then(function(){
+                                                deferred.resolve({ContentLocation: contentLocation, projectMetadata: projectMetadata});
+                                        }, deferred.reject, deferred.progress);
+                                } else {
+                                        deferred.resolve({fileMetadata: fileMetadata});
+                                }
+                        },
+                                deferred.reject,
+                                deferred.progress);
+
+                        return deferred;
+		},
