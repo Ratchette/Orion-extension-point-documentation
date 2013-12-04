@@ -1,0 +1,17 @@
+<html>
+<head>
+<script>
+  function authenticate() {
+    /* do authentication here, assume is fine, so post result back to Shell page */
+    var result = "Authenticated user: " + document.getElementById("username").value;
+    window.parent.postMessage(JSON.stringify({pageService: "orion.page.delegatedUI", source: "login", result: result}), "*");
+    return true;
+  }
+</script>
+</head>
+<body>
+ User name:<input type="text" id="username"><br>
+ Password:<input type="password" id="password">
+ <button type="button" onclick="authenticate();" value="Submit">Submit</button>
+</body>
+</html>

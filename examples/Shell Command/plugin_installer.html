@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Shell Command Plugin Example</title>
+	
+	<script type="text/javascript" src='script/Deferred.js'></script>
+	<script type="text/javascript" src="script/plugin.js"></script>
+	<script type="text/javascript" src="shellCommandExample.js"></script>
+	<!--<script type="text/javascript" src="delegatedShellCommandExample.js"></script>-->
+</head>
+	
+<body>
+	<h1>[Plugin Name] Example Shell Command Plugin</h1>
+
+	<p id="description">
+		[Describe what your plugin does] 
+		
+		The orion.shell.command service is used to contribute commands to the Shell page. 
+		When the service is executed, an object containing the user-supplied argument values is passed to the service's callback method.
+		The command then optionally returns a response (a return value) to be displayed in the Shell page. <br />
+		
+		This particular example adds a command to the shell that translates a number from 0 to 9 into its english name
+	</p>
+
+	<p id="reference">
+		For more information regarding this extension point please see <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_the_shell#orion.shell.command">
+		Eclipse Orion's Developer Guide </a> <br/>
+	</p>
+</body>
+</html>

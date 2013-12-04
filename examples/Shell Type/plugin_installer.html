@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Shell Type Plugin Example</title>
+	
+	<script type="text/javascript" src='script/Deferred.js'></script>
+	<script type="text/javascript" src="script/plugin.js"></script>
+	<script type="text/javascript" src="shellTypeExample.js"></script>
+</head>
+	
+<body>
+	<h1>[Plugin Name] Example Shell Type Plugin</h1>
+
+	<p id="description">
+		[Describe what your plugin does] 
+		
+		The orion.shell.type service is used to contribute parameter types to the Shell page. 
+		These enable contributed commands to have custom parameters with dynamically-computed completion suggestions. 
+		The service is executed when the Shell page needs either completion suggestion values to display, or the string representation for a given value. <br />
+		
+		This particular example creates a shell type that represents a planet in our solar system. It comes with a breif orion.shell.command plugin that displays the previously created type for demonstration purposes only.
+	</p>
+
+	<p id="reference">
+		For more information regarding this extension point please see <a href="http://wiki.eclipse.org/Orion/Documentation/Developer_Guide/Plugging_into_the_shell#orion.shell.type">
+		Eclipse Orion's Developer Guide </a> <br/>
+	</p>
+</body>
+</html>
