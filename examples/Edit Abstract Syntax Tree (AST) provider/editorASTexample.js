@@ -3,7 +3,7 @@
  * FIXME - needs a liscence
  *******************************************************************************/
 
-/*global orion esprima window*/
+/*global orion window*/
 
 window.onload = function(){
 	
